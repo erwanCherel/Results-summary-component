@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap");
+
+:root {
+  /* Use transparency to get the colour variations necessary to match the design. Hint: look into using `hsla()`. */
+  --light-red: hsla(0, 100%, 67%, 0.1);
+  --orangey-yellow: hsla(39, 100%, 56%, 0.1);
+  --green-teal: hsla(166, 100%, 37%, 0.1);
+  --cobalt-blue: hsla(234, 85%, 45%, 0.1);
+
+  --light-red-font: hsl(0, 100%, 67%);
+  --orangey-yellow-font: hsl(39, 100%, 56%);
+  --green-teal-font: hsl(166, 100%, 37%);
+  --cobalt-blue-font: hsl(234, 85%, 45%);
+
+  --light-slate-blue-BG: hsl(252, 100%, 67%);
+  --light-royal-blue-BG: hsl(241, 81%, 54%);
+  --violet-blue-circle: hsla(256, 72%, 46%, 1);
+  --persian-blue-circle: hsla(241, 72%, 46%, 0);
+  --white: hsl(0, 0%, 100%);
+  --pale-blue: hsl(221, 100%, 96%);
+  --light-lavender: hsl(241, 100%, 89%);
+  --dark-gray-blue: hsl(224, 30%, 27%);
+  --font-size-paragraphs: 18px;
+  --hanken-grotesk: "Hanken Grotesk", sans-serif;
+  --grey: hsl(0, 0%, 50%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: var(--hanken-grotesk);
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  background-color: var(--pale-blue);
+}
+
+#card {
+  max-width: 375px;
+  margin: auto;
+  background-color: var(--white);
+}
+
+#result {
+  text-align: center;
+  background: linear-gradient(
+    var(--light-slate-blue-BG),
+    var(--light-royal-blue-BG)
+  );
+  padding: 15px 60px;
+  border-radius: 0 0 1em 1em;
+}
+
+#score {
+  display: inline-block;
+  padding: 20px;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  background: linear-gradient(
+    var(--violet-blue-circle),
+    var(--persian-blue-circle)
+  );
+  color: white;
+  font-weight: 800;
+}
+
+#user-score {
+  font-size: 60px;
+}
+
+#of-100 {
+  color: var(--light-lavender);
+}
+
+#result h1 {
+  color: var(--light-lavender);
+  font-size: 1.1em;
+  margin: 10px 0 25px 0;
+}
+
+h2 {
+  color: var(--white);
+  margin: 20px 0;
+}
+
+p {
+  color: var(--light-lavender);
+  margin-bottom: 25px;
+}
+
+#summary {
+  padding: 30px;
+}
+
+#summary h1 {
+  font-size: 1.1em;
+  color: var(--dark-gray-blue);
+}
+
+#articles {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 15px;
+  margin: 1.5em 0;
+}
+
+article,
+.skills {
+  display: flex;
+  flex-direction: row;
+}
+
+article {
+  height: 55px;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0.4em;
+  padding: 0 10px;
+}
+
+article:nth-child(1) {
+  background-color: var(--light-red);
+  color: var(--light-red-font);
+}
+article:nth-child(2) {
+  background-color: var(--orangey-yellow);
+  color: var(--orangey-yellow-font);
+}
+article:nth-child(3) {
+  background-color: var(--green-teal);
+  color: var(--green-teal-font);
+}
+article:nth-child(4) {
+  background-color: var(--cobalt-blue);
+  color: var(--cobalt-blue-font);
+}
+
+.skills > img {
+  align-self: center;
+}
+
+.skills {
+  font-size: calc(var(--font-size-paragraphs) - 4px);
+  gap: 10px;
+  font-weight: 500;
+}
+
+.first-span {
+  color: var(--dark-gray-blue);
+  font-weight: 800;
+}
+
+.second-span {
+  color: grey;
+}
+
+button {
+  height: 60px;
+  border-radius: 100em;
+  width: 100%;
+  border: none;
+  background-color: var(--dark-gray-blue);
+  color: var(--white);
+  font-size: var(--font-size-paragraphs);
+  font-weight: 700;
+}
+
+@media screen and (min-width: 1440px) {
+  #card {
+    display: grid;
+    grid-template-columns: repeat(2, 330px);
+    max-width: none;
+    border-radius: 1em;
+  }
+
+  #result {
+    border-radius: 1em;
+  }
+
+  button:hover {
+    background: linear-gradient(
+      var(--light-slate-blue-BG),
+      var(--light-royal-blue-BG)
+    );
+    cursor: pointer;
+  }
+}
